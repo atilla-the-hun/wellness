@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: Outfit;
+}
+
+.active hr {
+    @apply block
+}
+
+@media (max-width:740px) {
+    .active  p{
+       @apply text-white bg-primary
+    }
+}
+
+::-webkit-scrollbar {
+    @apply hidden
+}
+
+/* Add this to your global CSS file or a CSS module */
+.full-screen-bg {
+    background-color: black;
+    min-height: 100vh;
+  }
+
+/* Add this to your global CSS file or a CSS module */
+.hero-bg {
+    background-image: url('./assets/tropical_beach.jpg'); /* Replace with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 80vh; /* Adjust as needed */
+    position: relative; /* Required for the overlay to be positioned correctly */
+  }
+  
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Adjust the opacity as needed */
+    z-index: 1; /* Ensure the overlay is below the content */
+  }
+  
+  .hero-bg > * {
+    position: relative;
+    z-index: 2; /* Ensure the content is above the overlay */
+  }
